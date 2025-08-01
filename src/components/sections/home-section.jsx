@@ -8,7 +8,7 @@ export default function HomeSection() {
       <div className="absolute inset-0 bg-background/50 z-10" />
       <div className="absolute inset-0 hidden md:block md:w-1/2 right-0">
           <Image
-            src="https://placehold.co/800x1200"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&h=1200&fit=crop"
             alt="Vikram Kumar"
             layout="fill"
             objectFit="cover"
@@ -17,7 +17,7 @@ export default function HomeSection() {
           />
       </div>
        <Image
-          src="https://placehold.co/600x800"
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&h=800&fit=crop"
           alt="Vikram Kumar"
           layout="fill"
           objectFit="cover"

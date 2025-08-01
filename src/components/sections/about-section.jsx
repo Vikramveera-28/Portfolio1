@@ -32,7 +32,7 @@ export default function AboutSection() {
             <div className="relative w-[300px] h-[350px] lg:w-[350px] lg:h-[400px]">
               <div className="absolute -inset-2 border-2 border-primary rounded-xl rotate-[-6deg] "></div>
               <Image
-                src="https://placehold.co/400x500"
+                src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400&h=500&fit=crop"
                 alt="Vikram Kumar"
                 width={400}
                 height={500}
