@@ -3,17 +3,17 @@ import ProjectCard from '@/components/project-card';
 
 const projects = [
   {
-    title: "Blog Websites",
-    description: "A full-featured blog platform with dynamic content, user authentication, and a clean, responsive layout.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=600&h=400&fit=crop",
-    imageHint: "blog website",
+    title: "Ecommerce",
+    description: "Built with: HTML, CSS, JavaScript, Bootstrap, Django, MySQL, and json-server.",
+    image: "https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=600&h=400&fit=crop",
+    imageHint: "ecommerce shopping",
     link: "#",
   },
   {
-    title: "Fashion Store",
-    description: "An e-commerce site for a fashion brand, complete with product galleries, a shopping cart, and a secure checkout process.",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&h=400&fit=crop",
-    imageHint: "fashion store",
+    title: "AI Chat Bot",
+    description: "Built with: HTML, CSS, JavaScript, React, Bootstrap, Material UI, MySQL, Flask API, CrewAI, and Gemini API.",
+    image: "https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&h=400&fit=crop",
+    imageHint: "robot chatbot",
     link: "#",
   },
   {
