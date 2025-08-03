@@ -308,7 +308,29 @@ const skillsData = [
   },
 ];
 
+const SkillCategory = ({ title, skills }) => (
+  <div className="space-y-8">
+    <h3 className="text-2xl font-bold font-headline text-primary text-center">
+      {title}
+    </h3>
+    <div className="flex flex-wrap justify-center gap-12 md:gap-16">
+      {skills.map((skill, index) => (
+        <SkillCard
+          key={skill.name}
+          icon={skill.icon}
+          name={skill.name}
+          index={index}
+        />
+      ))}
+    </div>
+  </div>
+);
+
 export default function SkillsSection() {
+  const half = Math.ceil(skillsData.length / 2);
+  const leftSkills = skillsData.slice(0, half);
+  const rightSkills = skillsData.slice(half);
+
   return (
     <section id="skills" className="py-24 sm:py-32 bg-secondary">
       <div className="container">
@@ -320,24 +342,25 @@ export default function SkillsSection() {
             The technologies I work with.
           </p>
         </div>
-        <div className="space-y-16">
-          {skillsData.map((category) => (
-            <div key={category.title}>
-              <h3 className="text-2xl font-bold font-headline text-primary mb-8 text-center">
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-12 md:gap-16">
-                {category.skills.map((skill, index) => (
-                  <SkillCard
-                    key={skill.name}
-                    icon={skill.icon}
-                    name={skill.name}
-                    index={index}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-16">
+          <div className="space-y-16">
+            {leftSkills.map((category) => (
+              <SkillCategory
+                key={category.title}
+                title={category.title}
+                skills={category.skills}
+              />
+            ))}
+          </div>
+          <div className="space-y-16">
+            {rightSkills.map((category) => (
+              <SkillCategory
+                key={category.title}
+                title={category.title}
+                skills={category.skills}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
