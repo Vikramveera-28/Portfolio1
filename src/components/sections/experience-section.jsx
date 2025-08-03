@@ -2,9 +2,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const experiences = [
-  { role: 'Full Stack Intern', company: 'Bharat Intern', duration: 'Present', description: 'Developed and maintained full-stack web applications, contributing to both frontend and backend development.'},
-  { role: '.NET with SQL Intern', company: 'Zivaan Marketplace', duration: '05/2022 - 06/2022', description: 'Worked on enterprise-level applications using the .NET framework and managed databases with SQL.'},
-  { role: 'Web Designer Intern', company: 'Buck Softech Private Limited', duration: '03/2022 - 04/2022', description: 'Designed and developed responsive and visually appealing websites for various clients.'},
+  { role: 'AI Engineer', company: 'Bizzzup Upscalling', duration: '07/04/2025 - Present', description: 'Developing and deploying artificial intelligence models to enhance business processes and create innovative solutions.'},
+  { role: 'Full Stack Intern', company: 'Login 360', duration: '15/06/2024 - 15/10/2024', description: 'Contributed to the development of web applications, working across the full stack to implement new features and resolve bugs.'},
+  { role: 'IoT Trainer, Epub Trainer', company: 'Arunai Info Service', duration: '02/01/2023 - 31/05/2024', description: 'Trained individuals in Internet of Things technologies and e-publication standards, delivering hands-on workshops and creating educational materials.'},
 ];
 
 export default function ExperienceSection() {
