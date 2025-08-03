@@ -99,7 +99,7 @@ const skillsData = [
     ],
   },
   {
-    title: 'Frameworks',
+    title: 'Frontend and framework',
     skills: [
       {
         name: 'Bootstrap',
@@ -168,6 +168,39 @@ const skillsData = [
         ),
       },
     ],
+  },
+  {
+    title: 'Backend',
+    skills: [
+       {
+        name: 'Django',
+        icon: (
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="64" 
+            height="64" 
+            viewBox="0 0 24 24"
+            className="w-16 h-16 text-green-800"
+          >
+            <path fill="currentColor" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,17H8v-5h2V17z M14,17h-2V7h2V17z"></path>
+          </svg>
+        )
+      },
+      {
+        name: 'Flask API',
+        icon: (
+           <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="64" 
+            height="64" 
+            viewBox="0 0 24 24"
+            className="w-16 h-16 text-gray-800"
+          >
+            <path fill="currentColor" d="M6,2v6h2V4h3V2H6z M16,2v2h3v4h2V2H16z M6,16v2h3v4h2v-4h3v-2H6z M18,10l-4,4h3v6h2v-6h3L18,10z"></path>
+          </svg>
+        )
+      }
+    ]
   },
   {
     title: 'Databases',
