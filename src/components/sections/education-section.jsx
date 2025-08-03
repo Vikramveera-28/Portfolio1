@@ -9,7 +9,7 @@ const education = [
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-24 sm:py-32 bg-secondary">
+    <section id="education" className="py-24 sm:py-32">
        <div className="container">
         <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold font-headline">Education</h2>
