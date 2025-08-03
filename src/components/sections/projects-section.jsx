@@ -10,7 +10,11 @@ const projects = [
     description: 'A fully functional e-commerce platform with features like product catalog, shopping cart, and user accounts.',
     image: 'https://placehold.co/600x400.png',
     imageHint: 'ecommerce online shopping',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Django', 'MySQL', 'json-server'],
+    skills: {
+      'Frontend': ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+      'Backend': ['Django', 'json-server'],
+      'Database': ['MySQL']
+    },
     link: '#',
   },
   {
