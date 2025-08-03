@@ -212,6 +212,67 @@ const skillsData = [
       },
     ],
   },
+  {
+    title: 'AI Framework',
+    skills: [
+      {
+        name: 'CrewAI',
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            viewBox="0 0 24 24"
+            className="w-16 h-16 text-indigo-500"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2zm0-4v-6h2v6z"
+            ></path>
+          </svg>
+        ),
+      },
+      {
+        name: 'Google ADK',
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            viewBox="0 0 24 24"
+            className="w-16 h-16 text-green-500"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 14h-8v-2h8v2zm0-4h-8v-2h8v2z"
+            ></path>
+          </svg>
+        ),
+      },
+    ],
+  },
+  {
+    title: 'AI Automation',
+    skills: [
+      {
+        name: 'N8N',
+        icon: (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            viewBox="0 0 24 24"
+            className="w-16 h-16 text-purple-500"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.5 16.5L12 14l2.5 2.5L12 11.5 9.5 14l2.5-2.5L12 9l-2.5 2.5L7 9l2.5 2.5L7 14l2.5-2.5zm5-5L12 14l2.5 2.5L17 14l-2.5-2.5z"
+            ></path>
+          </svg>
+        ),
+      },
+    ],
+  },
 ];
 
 export default function SkillsSection() {
