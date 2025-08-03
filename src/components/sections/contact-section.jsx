@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin, Facebook, Download } from 'lucide-react';
+import { Mail, Phone, Linkedin, Facebook, Download, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactForm from '@/components/contact-form';
 
@@ -36,6 +36,11 @@ export default function ContactSection() {
                    <Button variant="outline" size="icon" asChild>
                     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                       <Facebook className="h-5 w-5" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="icon" asChild>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <Github className="h-5 w-5" />
                     </a>
                   </Button>
                </div>
