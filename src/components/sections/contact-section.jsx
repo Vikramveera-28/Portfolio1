@@ -1,4 +1,4 @@
-import { Mail, Phone, Linkedin, Github, Download } from 'lucide-react';
+import { Mail, Phone, Linkedin, Facebook, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactForm from '@/components/contact-form';
 
@@ -15,13 +15,13 @@ export default function ContactSection() {
             <div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Contact Information</h3>
               <div className="space-y-4">
-                <a href="mailto:vikramsharma8651005689@gmail.com" className="flex items-center gap-3 group">
+                <a href="mailto:vikramkumaru28@gmail.com" className="flex items-center gap-3 group">
                   <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"/>
-                  <span>vikramsharma8651005689@gmail.com</span>
+                  <span>vikramkumaru28@gmail.com</span>
                 </a>
-                <a href="tel:+918651005689" className="flex items-center gap-3 group">
+                <a href="tel:+919514945463" className="flex items-center gap-3 group">
                   <Phone className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors"/>
-                  <span>+91 8651005689</span>
+                  <span>+91 9514945463</span>
                 </a>
               </div>
             </div>
@@ -34,8 +34,8 @@ export default function ContactSection() {
                     </a>
                   </Button>
                    <Button variant="outline" size="icon" asChild>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                      <Github className="h-5 w-5" />
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                      <Facebook className="h-5 w-5" />
                     </a>
                   </Button>
                </div>
