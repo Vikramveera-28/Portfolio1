@@ -153,16 +153,16 @@ const skillsData = [
       },
     ],
   },
-  {
+   {
     title: 'Backend',
     skills: [
        {
         name: 'Django',
         icon: (
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="64" 
-            height="64" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
             viewBox="0 0 24 24"
             className="w-16 h-16"
           >
@@ -174,10 +174,10 @@ const skillsData = [
       {
         name: 'Flask API',
         icon: (
-           <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="64" 
-            height="64" 
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
             viewBox="0 0 24 24"
             className="w-16 h-16"
           >
@@ -305,7 +305,7 @@ const skillsData = [
   },
 ];
 
-const SkillCategory = ({ title, skills }) => (
+const SkillCategory = ({ title, skills, direction }) => (
   <div className="space-y-8">
     <h3 className="text-2xl font-bold font-headline text-primary text-center">
       {title}
@@ -317,6 +317,7 @@ const SkillCategory = ({ title, skills }) => (
           icon={skill.icon}
           name={skill.name}
           index={index}
+          direction={direction}
         />
       ))}
     </div>
@@ -329,7 +330,7 @@ export default function SkillsSection() {
   const rightSkills = skillsData.slice(half);
 
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-secondary">
+    <section id="skills" className="py-24 sm:py-32 bg-secondary overflow-x-hidden">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold font-headline">
@@ -346,6 +347,7 @@ export default function SkillsSection() {
                 key={category.title}
                 title={category.title}
                 skills={category.skills}
+                direction="left"
               />
             ))}
           </div>
@@ -355,6 +357,7 @@ export default function SkillsSection() {
                 key={category.title}
                 title={category.title}
                 skills={category.skills}
+                direction="right"
               />
             ))}
           </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-export default function SkillCard({ icon, name, index }) {
+export default function SkillCard({ icon, name, index, direction = 'left' }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -30,11 +30,16 @@ export default function SkillCard({ icon, name, index }) {
     };
   }, []);
 
+  const directionClasses = {
+    left: 'translate-x-10',
+    right: '-translate-x-10',
+  }
+
   return (
     <div
       ref={ref}
       className={`flex flex-col items-center gap-4 transition-all duration-700 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        isVisible ? 'translate-x-0 opacity-100' : `${directionClasses[direction]} opacity-0`
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
