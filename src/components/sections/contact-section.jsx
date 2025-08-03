@@ -29,6 +29,11 @@ export default function ContactSection() {
               <h3 className="text-xl font-semibold mb-4 text-primary">Follow Me</h3>
                <div className="flex items-center gap-4">
                   <Button variant="outline" size="icon" asChild>
+                    <a href="mailto:vikramkumaru28@gmail.com" aria-label="Email">
+                      <Mail className="h-5 w-5" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="icon" asChild>
                     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                       <Linkedin className="h-5 w-5" />
                     </a>
