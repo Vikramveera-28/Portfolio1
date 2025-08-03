@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +18,12 @@ const projects = [
     description: 'An intelligent chatbot powered by generative AI to handle user queries and provide instant support.',
     image: 'https://placehold.co/600x400.png',
     imageHint: 'robot chatbot',
-    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'Material UI', 'MySQL', 'Flask API', 'CrewAI', 'Gemini API'],
+    skills: {
+      'Frontend': ['HTML', 'CSS', 'JS', 'React', 'Bootstrap', 'Material UI'],
+      'Backend': ['Flask API'],
+      'Database': ['MySQL'],
+      'AI-Framework': ['CrewAI', 'Gemini API'],
+    },
     link: '#',
   }
 ];
@@ -46,11 +52,26 @@ export default function ProjectsSection() {
               </CardHeader>
               <CardContent className="flex-grow">
                 <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.skills.map(skill => (
-                    <Badge key={skill} variant="secondary">{skill}</Badge>
-                  ))}
-                </div>
+                {Array.isArray(project.skills) ? (
+                  <div className="flex flex-wrap gap-2">
+                    {project.skills.map(skill => (
+                      <Badge key={skill} variant="secondary">{skill}</Badge>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {Object.entries(project.skills).map(([category, skills]) => (
+                      <div key={category}>
+                        <h4 className="font-semibold mb-2 text-primary">{category}</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {skills.map(skill => (
+                            <Badge key={skill} variant="secondary">{skill}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </CardContent>
               <CardFooter>
                  <Button asChild className="w-full">
