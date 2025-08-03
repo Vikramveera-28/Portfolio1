@@ -3,6 +3,7 @@ import { Badge } from '@/components/ui/badge';
 
 const education = [
   { degree: 'Master of Computer Applications', university: 'Parul University', duration: '2022 - Present', details: 'Pursuing advanced studies in computer science and software development.'},
+  { degree: 'Bachelor of Science in Mathematics', university: 'Tiruvalluvar University', duration: '2018 - 2021', details: 'Graduated with a degree in Mathematics, developing strong analytical and problem-solving skills.'},
   { degree: 'Bachelor of Computer Applications', university: 'Ranchi University', duration: '2019 - 2022', details: 'Achieved a score of 74.43%, building a strong foundation in computer fundamentals.'},
 ];
 
