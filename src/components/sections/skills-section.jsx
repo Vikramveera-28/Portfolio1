@@ -12,31 +12,20 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-orange-600"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M4 3h16l-1.5 18L12 22l-6.5-1L4 3z"
-              clipRule="evenodd"
-              fillRule="evenodd"
+              fill="#E34F26"
+              d="M1.6 21.3L.1 3h23.8l-1.5 18.3L12 24l-10.4-2.7z"
             ></path>
-            <path
-              fill="#fff"
-              d="M12 5v15l5.5-1.5L18.5 5H12z"
-              clipRule="evenodd"
-              fillRule="evenodd"
-            ></path>
+            <path fill="#F16529" d="M12 22.1V4.9h9.6l-1.3 15-8.3 2.2z"></path>
             <path
               fill="#EBEBEB"
-              d="M12 10.5h3.5l-.5 2.5h-3v4l3.5-1 .5-4.5h-4z"
-              clipRule="evenodd"
-              fillRule="evenodd"
+              d="M12 10.1v3.8h4.4l-.4 4.5-4 1.1v4l7.3-2 .8-9.1H12v-4zM12 6.8h8.8l.2-2H12v2z"
             ></path>
             <path
-              fill="#EBEBEB"
-              d="M12 6.5h4.5l-.5 2.5h-4v-2.5z"
-              clipRule="evenodd"
-              fillRule="evenodd"
+              fill="#FFF"
+              d="M12 10.1v3.8H7.2l-.3-3.8H12zm0 9.2l-4-1.1-.3-4.5h4.3v-3.7H4.3l-.4-4.2h8.1V5H3.4l.7 10.3 7.9 2.1v4.8z"
             ></path>
           </svg>
         ),
@@ -49,31 +38,20 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-blue-600"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M4 3h16l-1.5 18L12 22l-6.5-1L4 3z"
-              clipRule="evenodd"
-              fillRule="evenodd"
+              fill="#1572B6"
+              d="M1.6 21.3L.1 3h23.8l-1.5 18.3L12 24l-10.4-2.7z"
             ></path>
+            <path fill="#33A9DC" d="M12 22.1V4.9h9.6l-1.3 15-8.3 2.2z"></path>
             <path
-              fill="#fff"
-              d="M12 5v15l5.5-1.5L18.5 5H12z"
-              clipRule="evenodd"
-              fillRule="evenodd"
+              fill="#FFF"
+              d="M12 10.1v3.8h4.4l-.4 4.5-4 1.1v4l7.3-2 .8-9.1H12v-4zM12 6.8h8.8l.2-2H12v2z"
             ></path>
             <path
               fill="#EBEBEB"
-              d="M12 10.5h3.5l-.5 2.5h-3v4l3.5-1 .5-4.5h-4z"
-              clipRule="evenodd"
-              fillRule="evenodd"
-            ></path>
-            <path
-              fill="#EBEBEB"
-              d="M12 6.5h4.5l-.5 2.5h-4v-2.5z"
-              clipRule="evenodd"
-              fillRule="evenodd"
+              d="M12 10.1v3.8H7.2l-.3-3.8H12zm0 9.2l-4-1.1-.3-4.5h4.3v-3.7H4.3l-.4-4.2h8.1V5H3.4l.7 10.3 7.9 2.1v4.8z"
             ></path>
           </svg>
         ),
@@ -86,13 +64,10 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-yellow-500"
+            className="w-16 h-16"
           >
-            <rect width="24" height="24" fill="currentColor" rx="2"></rect>
-            <path
-              fill="#000"
-              d="M7.3 11.4c0-.5.2-1 .6-1.3s.9-.5 1.5-.5c.7 0 1.2.1 1.6.4s.6.6.7 1.1h-2c0-.2-.1-.4-.3-.5s-.4-.2-.7-.2c-.3 0-.5.1-.7.3s-.2.4-.2.6c0 .3.1.5.3.7s.5.3.8.3c.4 0 .7-.1 1-.3v1.8c-.4.2-.8.3-1.3.3c-.7 0-1.2-.2-1.6-.5s-.7-.7-1-1.3c-.2-.5-.3-.9-.3-1.4zm5.8 4.2c-.3 0-.5 0-.7-.1s-.4-.2-.5-.3l.4-1.8c.2.2.4.3.7.4c.2 0 .4-.1.6-.2c.2-.1.2-.3.2-.5c0-.2-.1-.4-.4-.5l-1.2-.4c-.6-.2-1-.5-1.3-.8s-.4-.7-.4-1.2c0-.5.2-1 .5-1.3s.8-.5 1.4-.5c.3 0 .6 0 .8.1s.4.2.5.3l-.4 1.8c-.2-.1-.4-.2-.6-.2s-.3-.1-.5-.1c-.2 0-.3 0-.5.1s-.2.2-.2.4c0 .2.1.3.3.4l1.2.4c.7.2 1.1.5 1.4.8s.5.7.5 1.2c0 .6-.2 1.1-.6 1.4s-.9.5-1.6.5z"
-            ></path>
+            <path fill="#F7DF1E" d="M0 0h24v24H0z"></path>
+            <path d="M4.3 18.4h3.1c.2 1.1.9 1.7 2.2 1.7 1.2 0 1.9-.5 1.9-1.3s-.6-1.1-2-1.6c-2.1-.7-3.4-1.6-3.4-3.7 0-1.8 1.4-3.2 3.6-3.2 1.8 0 3 .9 3.5 2.5l-2.9.8c-.2-.6-.5-1-1-1-.6 0-1 .3-1 .8s.4.7 1.5 1.1c2.1.7 3.6 1.7 3.6 3.8C20 18.1 18.5 20 16 20c-2.4 0-4-1.3-4.6-3.2l3-1.1c.3.8.7 1.3 1.5 1.3.8 0 1.4-.4 1.4-1.1s-.4-1-1.6-1.5c-1.6-.6-3.1-1.5-3.1-3.5 0-1.7 1.2-3 3.4-3 1.6 0 2.8.7 3.3 2.2l-2.8.8c-.2-.5-.5-.8-.9-.8-.5 0-.9.3-.9.7s.3.7 1.4 1.1c1.8.6 3.2 1.6 3.2 3.6 0 2-1.4 3.4-3.9 3.4s-3.7-1.4-4.2-3.3z"></path>
           </svg>
         ),
       },
@@ -109,13 +84,16 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-purple-600"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M17.1,5.2H6.9C5.8,5.2,5,6.1,5,7.1v9.7c0,1.1,0.8,1.9,1.9,1.9h10.3c1.1,0,1.9-0.8,1.9-1.9V7.1C19,6.1,18.2,5.2,17.1,5.2z M15.4,12.3c0,1-0.8,1.8-1.8,1.8h-1.3v1.8h-2V8.2h3.1c1,0,1.8,0.8,1.8,1.8V12.3z"
+              fill="#7952B3"
+              d="M19 2H5C3.34 2 2 3.34 2 5v14c0 1.66 1.34 3 3 3h14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-2-3-2z"
             ></path>
-            <path fill="currentColor" d="M12.3,10h1.3v2.3h-1.3V10z"></path>
+            <path
+              fill="#FFF"
+              d="M14.2 14.5c0 .9-.6 1.6-1.7 1.6h-3c-1.1 0-1.7-.7-1.7-1.6v-5c0-.9.6-1.6 1.7-1.6h3c1.1 0 1.7.7 1.7 1.6v5zm-3.8-4.2h2.2c.5 0 .8.3.8.7v3c0 .4-.3.7-.8.7h-2.2c-.5 0-.8-.3-.8-.7v-3c0-.4.3-.7.8-.7z"
+            ></path>
           </svg>
         ),
       },
@@ -129,21 +107,21 @@ const skillsData = [
             viewBox="0 0 24 24"
             className="w-16 h-16 text-cyan-400"
           >
-            <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
-            <g fill="none" stroke="currentColor" strokeWidth="1.5">
-              <ellipse cx="12" cy="12" rx="11" ry="4.2"></ellipse>
+            <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
+            <g fill="none" stroke="currentColor" strokeWidth="1">
+              <ellipse cx="12" cy="12" rx="11" ry="4.5"></ellipse>
               <ellipse
                 cx="12"
                 cy="12"
                 rx="11"
-                ry="4.2"
+                ry="4.5"
                 transform="rotate(60 12 12)"
               ></ellipse>
               <ellipse
                 cx="12"
                 cy="12"
                 rx="11"
-                ry="4.2"
+                ry="4.5"
                 transform="rotate(120 12 12)"
               ></ellipse>
             </g>
@@ -158,12 +136,18 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-blue-500"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M16.48,16.48L12,14.26V4.5l8,4.62L16.48,16.48z"
+              fill="#0081CB"
+              d="M12 12l-2-2-2 2 2 2 2-2zm-4 4l-2-2-2 2 2 2 2-2z"
             ></path>
+            <path fill="#0081CB" d="M12 4l-6 6 2 2 4-4 4 4 2-2-6-6z"></path>
+            <path
+              fill="#00BFFF"
+              d="M16 12l2-2 2 2-2 2-2-2zm-4 4l2-2 2 2-2 2-2-2z"
+            ></path>
+            <path fill="#00BFFF" d="M12 20l6-6-2-2-4 4-4-4-2 2 6 6z"></path>
           </svg>
         ),
       },
@@ -180,9 +164,10 @@ const skillsData = [
             width="64" 
             height="64" 
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-green-800"
+            className="w-16 h-16"
           >
-            <path fill="currentColor" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,17H8v-5h2V17z M14,17h-2V7h2V17z"></path>
+            <path fill="#092E20" d="M20 3H4C3.45 3 3 3.45 3 4v16c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"></path>
+            <path fill="#FFF" d="M6.5 13.5h1.9l.6 2.3h2l-2.9-9h-2l-2.9 9h2l.7-2.3zm1.6-1.7l.8-3.1.8 3.1h-1.6zM12.9 8.8h2.6v6.2h-2.1v-1.1h-.1c-.4.8-1.1 1.3-2.1 1.3-.9 0-1.6-.4-2-1.1-.4-.8-.6-1.8-.6-2.9s.2-2.1.6-2.9c.4-.7 1.1-1.1 2-1.1.9 0 1.6.4 2.1 1.1h.1V8.8zm-2.4 4.8c0 .8.2 1.5.5 1.9.3.4.7.6 1.2.6s.9-.2 1.2-.6c.3-.4.5-1.1.5-1.9s-.2-1.5-.5-1.9c-.3-.4-.7-.6-1.2-.6s-.9.2-1.2.6c-.3.4-.5 1.1-.5 1.9z"></path>
           </svg>
         )
       },
@@ -194,9 +179,10 @@ const skillsData = [
             width="64" 
             height="64" 
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-gray-800"
+            className="w-16 h-16"
           >
-            <path fill="currentColor" d="M6,2v6h2V4h3V2H6z M16,2v2h3v4h2V2H16z M6,16v2h3v4h2v-4h3v-2H6z M18,10l-4,4h3v6h2v-6h3L18,10z"></path>
+            <path fill="#000" d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm3.1 9.9c-.3.3-.7.4-1.1.4s-.8-.1-1.1-.4c-1.1-.9-1.3-2.6-.5-3.4.3-.3.7-.4 1.1-.4s.8.1 1.1.4c1 .9 1.3 2.6.5 3.4zM8.9 9.9c-.3.3-.7.4-1.1.4s-.8-.1-1.1-.4c-1.1-.9-1.3-2.6-.5-3.4.3-.3.7-.4 1.1-.4s.8.1 1.1.4c1 .9 1.3 2.6.5 3.4z"></path>
+            <path fill="#FFF" d="M12 16.5c-3 0-5.5-2.5-5.5-5.5 0-.6.1-1.1.3-1.6.9 1.4 2.6 2.4 4.5 2.4s3.6-1 4.5-2.4c.2.5.3 1.1.3 1.6 0 3-2.5 5.5-5.5 5.5z"></path>
           </svg>
         )
       }
@@ -213,12 +199,11 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-blue-700"
+            className="w-16 h-16"
           >
-            <path
-              fill="currentColor"
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-3.5h-2v-3h2V6.5l4 3.5-4 3.5z"
-            ></path>
+            <path fill="#00758F" d="M22.3 12c0 5.7-4.6 10.3-10.3 10.3S1.7 17.7 1.7 12 6.3 1.7 12 1.7s10.3 4.6 10.3 10.3z"></path>
+            <path fill="#F29111" d="M12 3.7c-4.6 0-8.3 3.7-8.3 8.3s3.7 8.3 8.3 8.3c1.7 0 3.3-.5 4.6-1.4l-3-3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l3 3c.9-1.3 1.4-2.9 1.4-4.6 0-4.6-3.8-8.3-8.4-8.3z"></path>
+            <path fill="#FFF" d="M11.3 8.1c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3.1 5.4c0-1.1.9-2 2-2h.1l.9 1 .9-1h.1c1.1 0 2 .9 2 2v2.2c0 .5-.4.9-1 .9h-4c-.5 0-.9-.4-.9-.9v-2.2z"></path>
           </svg>
         ),
       },
@@ -233,12 +218,12 @@ const skillsData = [
             className="w-16 h-16 text-gray-400"
           >
             <path
-              fill="currentColor"
-              d="M20,16H4V8h16m0-2H4c-1.1,0-2,0.9-2,2v8c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V8c0-1.1-0.9-2-2-2z"
+              fill="#F29111"
+              d="M19.1 4H4.9C4.4 4 4 4.4 4 4.9v14.2c0 .5.4.9.9.9h14.2c.5 0 .9-.4.9-.9V4.9c0-.5-.4-.9-.9-.9z"
             ></path>
             <path
-              fill="currentColor"
-              d="M10,14h2v-4h-2v4z M6,14h2v-4H6v4z M14,14h2v-4h-2v4z"
+              fill="#FFF"
+              d="M12.9 8.2c-.7 0-1.3.2-1.8.6l2.1 2.1c.4-.5.6-1.1.6-1.8 0-1.6-1.3-2.9-2.9-2.9-1.1 0-2.1.6-2.6 1.5l-1.9-1.9C7.8 6.4 9.8 5 12 5c2.9 0 5.4 2.1 5.8 4.9h-4.9zM11.1 15.8c.7 0 1.3-.2 1.8-.6l-2.1-2.1c-.4.5-.6 1.1-.6 1.8 0 1.6 1.3 2.9 2.9 2.9 1.1 0 2.1-.6 2.6-1.5l1.9 1.9c-1.4 1.4-3.4 2.3-5.6 2.3-2.9 0-5.4-2.1-5.8-4.9h4.9z"
             ></path>
           </svg>
         ),
@@ -256,12 +241,12 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-indigo-500"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2zm0-4v-6h2v6z"
-            ></path>
+              fill="#4A90E2"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4v-6h2v6h-2z"
+            />
           </svg>
         ),
       },
@@ -273,11 +258,19 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-green-500"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 14h-8v-2h8v2zm0-4h-8v-2h8v2z"
+              fill="#4285F4"
+              d="M12 11.54L15.39 9.5 12 7.46 8.61 9.5 12 11.54z"
+            ></path>
+            <path
+              fill="#FBBC05"
+              d="M7.5 10.35v3.3L12 16.35l4.5-2.7v-3.3L12 13.05 7.5 10.35z"
+            ></path>
+            <path
+              fill="#EA4335"
+              d="M12 2L4.5 6.5v11L12 22l7.5-4.5v-11L12 2zm0 18.35L6.5 16.35v-7.7L12 12.05l5.5-3.4v7.7L12 20.35z"
             ></path>
           </svg>
         ),
@@ -295,11 +288,15 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-purple-500"
+            className="w-16 h-16"
           >
             <path
-              fill="currentColor"
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.5 16.5L12 14l2.5 2.5L12 11.5 9.5 14l2.5-2.5L12 9l-2.5 2.5L7 9l2.5 2.5L7 14l2.5-2.5zm5-5L12 14l2.5 2.5L17 14l-2.5-2.5z"
+              fill="#7B68EE"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+            ></path>
+            <path
+              fill="#FFF"
+              d="M10.3 8.1L8.5 12l1.8 3.9h2.4l-1.8-3.9 1.8-3.9h-2.4zm4.4 0L12.9 12l1.8 3.9h2.4l-1.8-3.9 1.8-3.9h-2.4z"
             ></path>
           </svg>
         ),
