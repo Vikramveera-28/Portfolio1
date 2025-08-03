@@ -1,6 +1,9 @@
 import Header from '@/components/header';
 import HomeSection from '@/components/sections/home-section';
 import AboutSection from '@/components/sections/about-section';
+import SkillsSection from '@/components/sections/skills-section';
+import ExperienceSection from '@/components/sections/experience-section';
+import EducationSection from '@/components/sections/education-section';
 import ServicesSection from '@/components/sections/services-section';
 import PortfolioSection from '@/components/sections/portfolio-section';
 import ContactSection from '@/components/sections/contact-section';
@@ -13,6 +16,9 @@ export default function Home() {
       <main className="flex-1">
         <HomeSection />
         <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <EducationSection />
         <ServicesSection />
         <PortfolioSection />
         <ContactSection />
