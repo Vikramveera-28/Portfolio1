@@ -1,17 +1,22 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Code, Layers, Database } from 'lucide-react';
 
 const skillsData = [
   {
     title: 'Web Design',
-    skills: 'HTML, CSS, JS',
+    skills: ['HTML', 'CSS', 'JavaScript'],
+    icon: <Code className="w-12 h-12 text-primary" />,
   },
   {
-    title: 'Framework',
-    skills: 'Django, React, Bootstrap, Material UI',
+    title: 'Frameworks',
+    skills: ['Django', 'React', 'Bootstrap', 'Material UI'],
+    icon: <Layers className="w-12 h-12 text-primary" />,
   },
   {
-    title: 'Database',
-    skills: 'MySQL, SQL',
+    title: 'Databases',
+    skills: ['MySQL', 'SQL'],
+    icon: <Database className="w-12 h-12 text-primary" />,
   },
 ];
 
@@ -25,11 +30,14 @@ export default function SkillsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skillsData.map((category) => (
-            <Card key={category.title} className="bg-background/50 text-center">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold font-headline text-primary mb-4">{category.title}</h3>
-                <p className="text-muted-foreground text-lg">{category.skills}</p>
-              </CardContent>
+            <Card key={category.title} className="bg-background/50 text-center flex flex-col items-center justify-center p-6">
+              <div className="mb-4">{category.icon}</div>
+              <h3 className="text-2xl font-bold font-headline text-primary mb-4">{category.title}</h3>
+              <div className="flex flex-wrap justify-center gap-2">
+                {category.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="text-lg px-4 py-2">{skill}</Badge>
+                ))}
+              </div>
             </Card>
           ))}
         </div>
