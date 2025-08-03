@@ -40,9 +40,9 @@ export default function SkillsSection() {
           <h2 className="text-3xl sm:text-4xl font-bold font-headline">My Skills</h2>
           <p className="text-lg text-muted-foreground mt-2">The technologies I work with.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
           {skillsData.map((category) => (
-            <Card key={category.title} className="bg-background/50 text-center flex flex-col items-center p-6">
+            <Card key={category.title} className="bg-background/50 text-center flex flex-col items-center p-6 w-full">
               <div className="mb-4">{category.icon}</div>
               <h3 className="text-2xl font-bold font-headline text-primary mb-4">{category.title}</h3>
               <div className="flex flex-col items-start self-stretch gap-2">
