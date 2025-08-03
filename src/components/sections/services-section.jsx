@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Smartphone, PenTool, Database, CodeXml, Dot } from 'lucide-react';
+import { Code, Bot, PenTool, GitBranch, Zap } from 'lucide-react';
 
 const services = [
   {
@@ -8,9 +8,9 @@ const services = [
     description: 'I code dynamic and responsive websites from scratch, ensuring seamless user experiences and optimal performance.'
   },
   {
-    icon: <Smartphone className="w-12 h-12 text-primary" />,
-    title: 'Android Development',
-    description: 'Crafting native Android applications that are intuitive, performant, and deliver a great mobile experience.'
+    icon: <Bot className="w-12 h-12 text-primary" />,
+    title: 'AI Engineer',
+    description: 'Developing intelligent systems and machine learning models to solve complex problems and drive innovation.'
   },
   {
     icon: <PenTool className="w-12 h-12 text-primary" />,
@@ -18,19 +18,19 @@ const services = [
     description: 'Creating visually stunning and user-friendly interfaces that capture attention and guide users effectively.'
   },
   {
-    icon: <CodeXml className="w-12 h-12 text-primary" />,
-    title: 'Java Development',
-    description: 'Building robust and scalable backend systems and applications using the power of Java.'
+    icon: <Zap className="w-12 h-12 text-primary" />,
+    title: 'AI Automation',
+    description: 'Implementing AI-powered automation to streamline workflows and boost operational efficiency.'
   },
   {
-    icon: <Database className="w-12 h-12 text-primary" />,
+    icon: <GitBranch className="w-12 h-12 text-primary" />,
+    title: 'N8N Workflow',
+    description: 'Building powerful, custom-automated workflows using N8N to connect various apps and services.'
+  },
+  {
+    icon: <Code className="w-12 h-12 text-primary" />,
     title: 'Python Development',
     description: 'Leveraging Python for web backends, scripting, and automation to create efficient solutions.'
-  },
-  {
-    icon: <Dot className="w-12 h-12 text-primary" />,
-    title: '.NET Development',
-    description: 'Developing powerful enterprise-grade applications on the Microsoft .NET platform with C#.'
   }
 ];
 
