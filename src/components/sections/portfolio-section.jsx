@@ -38,9 +38,6 @@ export default function PortfolioSection() {
             <ProjectCard key={index} project={project} />
           ))}
         </div>
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">See More</Button>
-        </div>
       </div>
     </section>
   );
