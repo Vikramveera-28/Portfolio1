@@ -1,10 +1,6 @@
-"use client";
-
 import { useState } from 'react';
-import Link from 'next/link';
 import { Menu, X, Code } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -18,64 +14,142 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const handleNavClick = () => {
+    setMobileOpen(false);
+  };
+
+  const drawer = (
+    <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle}>
+      <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
+        <Code style={{ color: '#f59e0b' }} />
+        <Typography variant="h6" component="div" sx={{ fontWeight: 'bold' }}>
+          Persona Portfolio
+        </Typography>
+      </Box>
+      <List>
+        {navLinks.map(({ href, label }) => (
+          <ListItem key={label} component="a" href={href} onClick={handleNavClick}>
+            <ListItemText 
+              primary={label} 
+              sx={{ 
+                '& .MuiListItemText-primary': {
+                  fontSize: '1.1rem',
+                  fontWeight: 500,
+                  transition: 'color 0.3s ease',
+                  '&:hover': {
+                    color: '#3b82f6',
+                  }
+                }
+              }}
+            />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <Link href="#home" className="mr-6 flex items-center space-x-2">
-          <Code className="h-6 w-6 text-accent" />
-          <span className="font-bold">Persona Portfolio</span>
-        </Link>
-        <nav className="hidden md:flex md:items-center md:gap-6 text-sm font-medium">
-          {navLinks.map(({ href, label }) => (
-            <a
-              key={label}
-              href={href}
-              className="transition-colors hover:text-accent relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex flex-1 items-center justify-end md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open Menu</span>
+    <>
+      <AppBar 
+        position="sticky" 
+        sx={{ 
+          backgroundColor: 'rgba(15, 23, 42, 0.95)',
+          backdropFilter: 'blur(10px)',
+          borderBottom: '1px solid #334155',
+          boxShadow: 'none'
+        }}
+      >
+        <Toolbar>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexGrow: 1 }}>
+            <Code style={{ color: '#f59e0b' }} />
+            <Typography variant="h6" component="a" href="#home" sx={{ 
+              fontWeight: 'bold', 
+              textDecoration: 'none', 
+              color: 'inherit',
+              '&:hover': {
+                color: '#3b82f6'
+              }
+            }}>
+              Persona Portfolio
+            </Typography>
+          </Box>
+          
+          {/* Desktop Navigation */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3 }}>
+            {navLinks.map(({ href, label }) => (
+              <Button
+                key={label}
+                component="a"
+                href={href}
+                sx={{
+                  color: 'text.primary',
+                  textTransform: 'none',
+                  fontWeight: 500,
+                  fontSize: '0.9rem',
+                  position: 'relative',
+                  '&:hover': {
+                    backgroundColor: 'transparent',
+                    color: '#3b82f6',
+                    '&::after': {
+                      width: '100%',
+                    }
+                  },
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: '-2px',
+                    left: 0,
+                    width: 0,
+                    height: '2px',
+                    backgroundColor: '#3b82f6',
+                    transition: 'width 0.3s ease',
+                  }
+                }}
+              >
+                {label}
               </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
-              <div className="flex flex-col p-6">
-                <div className="mb-8 flex justify-between items-center">
-                    <Link href="#home" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Code className="h-6 w-6 text-accent" />
-                      <span className="font-bold">Persona Portfolio</span>
-                    </Link>
-                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                      <X className="h-6 w-6" />
-                      <span className="sr-only">Close Menu</span>
-                    </Button>
-                </div>
-                <nav className="flex flex-col gap-6 text-lg font-medium">
-                  {navLinks.map(({ href, label }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      className="transition-colors hover:text-accent"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {label}
-                    </a>
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </div>
-    </header>
+            ))}
+          </Box>
+
+          {/* Mobile Menu Button */}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: 'none' } }}
+          >
+            <Menu />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: 'block', md: 'none' },
+          '& .MuiDrawer-paper': { 
+            boxSizing: 'border-box', 
+            width: 250,
+            backgroundColor: '#1e293b',
+            borderRight: '1px solid #334155'
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
+    </>
   );
 }

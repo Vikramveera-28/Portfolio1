@@ -1,14 +1,13 @@
 
-import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, CardActions, Button, Chip } from '@mui/material';
+import ecommerceImg from '../../assets/images/Ecommerce.png';
+// import aiChatBot from '../../assets/images/aiChatBot.png';
 
 const projects = [
   {
     title: 'Ecommerce Website',
     description: 'A fully functional e-commerce platform with features like product catalog, shopping cart, and user accounts.',
-    image: 'https://placehold.co/600x400.png',
+    image: ecommerceImg,
     imageHint: 'ecommerce online shopping',
     skills: {
       'Frontend': ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
@@ -34,58 +33,166 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 sm:py-32">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold font-headline">My Projects</h2>
-          <p className="text-lg text-muted-foreground mt-2">A selection of my recent work.</p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
+    <Box
+      id="projects"
+      sx={{
+        py: { xs: 6, md: 8 },
+        backgroundColor: 'background.default',
+      }}
+    >
+      <Container>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 700,
+              mb: 2,
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+            }}
+          >
+            My Projects
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'text.secondary',
+              fontSize: '1.1rem',
+            }}
+          >
+            A selection of my recent work.
+          </Typography>
+        </Box>
+        
+        <Grid container spacing={4}>
           {projects.map((project, index) => (
-            <Card key={index} className="bg-background/50 overflow-hidden flex flex-col">
-              <CardHeader>
-                <Image
-                  src={project.image}
+            <Grid item xs={12} md={6} key={index}>
+              <Card
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  backgroundColor: 'background.paper',
+                  border: '1px solid #334155',
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+                  },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="250"
+                  image={project.image}
                   alt={project.title}
-                  width={600}
-                  height={400}
-                  className="rounded-t-lg object-cover"
-                  data-ai-hint={project.imageHint}
+                  sx={{ objectFit: 'cover' }}
                 />
-                <CardTitle className="pt-4">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                {Array.isArray(project.skills) ? (
-                  <div className="flex flex-wrap gap-2">
-                    {project.skills.map(skill => (
-                      <Badge key={skill} variant="secondary">{skill}</Badge>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    {Object.entries(project.skills).map(([category, skills]) => (
-                      <div key={category}>
-                        <h4 className="font-semibold mb-2 text-primary">{category}</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {skills.map(skill => (
-                            <Badge key={skill} variant="secondary">{skill}</Badge>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-              <CardFooter>
-                 <Button asChild className="w-full">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
-                </Button>
-              </CardFooter>
-            </Card>
+                
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <Typography
+                    variant="h5"
+                    component="h3"
+                    sx={{
+                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontWeight: 600,
+                      mb: 2,
+                    }}
+                  >
+                    {project.title}
+                  </Typography>
+                  
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: 'text.secondary',
+                      mb: 3,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {project.description}
+                  </Typography>
+                  
+                  <Box sx={{ mb: 2 }}>
+                    {Array.isArray(project.skills) ? (
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                        {project.skills.map(skill => (
+                          <Chip
+                            key={skill}
+                            label={skill}
+                            size="small"
+                            sx={{
+                              backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                              color: '#3b82f6',
+                              border: '1px solid rgba(59, 130, 246, 0.2)',
+                            }}
+                          />
+                        ))}
+                      </Box>
+                    ) : (
+                      <Box>
+                        {Object.entries(project.skills).map(([category, skills]) => (
+                          <Box key={category} sx={{ mb: 2 }}>
+                            <Typography
+                              variant="subtitle2"
+                              sx={{
+                                fontWeight: 600,
+                                color: '#3b82f6',
+                                mb: 1,
+                              }}
+                            >
+                              {category}
+                            </Typography>
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                              {skills.map(skill => (
+                                <Chip
+                                  key={skill}
+                                  label={skill}
+                                  size="small"
+                                  sx={{
+                                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                    color: '#3b82f6',
+                                    border: '1px solid rgba(59, 130, 246, 0.2)',
+                                  }}
+                                />
+                              ))}
+                            </Box>
+                          </Box>
+                        ))}
+                      </Box>
+                    )}
+                  </Box>
+                </CardContent>
+                
+                <CardActions sx={{ p: 3, pt: 0 }}>
+                  <Button
+                    component="a"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="contained"
+                    fullWidth
+                    sx={{
+                      background: 'linear-gradient(135deg, #3b82f6, #f59e0b)',
+                      color: 'white',
+                      textTransform: 'none',
+                      fontWeight: 600,
+                      '&:hover': {
+                        background: 'linear-gradient(135deg, #3b82f6, #f59e0b)',
+                        transform: 'translateY(-1px)',
+                      },
+                    }}
+                  >
+                    View Project
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
           ))}
-        </div>
-      </div>
-    </section>
+        </Grid>
+      </Container>
+    </Box>
   );
 }

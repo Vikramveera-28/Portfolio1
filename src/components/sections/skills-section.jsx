@@ -1,4 +1,10 @@
-import SkillCard from '@/components/skill-card';
+import { Box, Container, Typography, Grid, Card, CardContent, Avatar } from '@mui/material';
+import HtmlIcon from '../../assets/Icons/Html.png';
+import CssIcon from '../../assets/Icons/Css.png';
+import JsIcon from '../../assets/Icons/Js.png';
+import ReactIcon from '../../assets/Icons/React.png';
+import BootstrapIcon from '../../assets/Icons/Bootstrap.png';
+import DjangoIcon from '../../assets/Icons/Django.png';
 
 const skillsData = [
   {
@@ -6,70 +12,15 @@ const skillsData = [
     skills: [
       {
         name: 'HTML',
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            className="w-16 h-16"
-          >
-            <path
-              fill="#E34F26"
-              d="M1.6 21.3L.1 3h23.8l-1.5 18.3L12 24l-10.4-2.7z"
-            ></path>
-            <path fill="#F16529" d="M12 22.1V4.9h9.6l-1.3 15-8.3 2.2z"></path>
-            <path
-              fill="#EBEBEB"
-              d="M12 10.1v3.8h4.4l-.4 4.5-4 1.1v4l7.3-2 .8-9.1H12v-4zM12 6.8h8.8l.2-2H12v2z"
-            ></path>
-            <path
-              fill="#FFF"
-              d="M12 10.1v3.8H7.2l-.3-3.8H12zm0 9.2l-4-1.1-.3-4.5h4.3v-3.7H4.3l-.4-4.2h8.1V5H3.4l.7 10.3 7.9 2.1v4.8z"
-            ></path>
-          </svg>
-        ),
+        icon: HtmlIcon,
       },
       {
         name: 'CSS',
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            className="w-16 h-16"
-          >
-            <path
-              fill="#1572B6"
-              d="M1.6 21.3L.1 3h23.8l-1.5 18.3L12 24l-10.4-2.7z"
-            ></path>
-            <path fill="#33A9DC" d="M12 22.1V4.9h9.6l-1.3 15-8.3 2.2z"></path>
-            <path
-              fill="#FFF"
-              d="M12 10.1v3.8h4.4l-.4 4.5-4 1.1v4l7.3-2 .8-9.1H12v-4zM12 6.8h8.8l.2-2H12v2z"
-            ></path>
-            <path
-              fill="#EBEBEB"
-              d="M12 10.1v3.8H7.2l-.3-3.8H12zm0 9.2l-4-1.1-.3-4.5h4.3v-3.7H4.3l-.4-4.2h8.1V5H3.4l.7 10.3 7.9 2.1v4.8z"
-            ></path>
-          </svg>
-        ),
+        icon: CssIcon,
       },
       {
         name: 'JavaScript',
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            className="w-16 h-16"
-          >
-            <path fill="#F7DF1E" d="M0 0h24v24H0z"></path>
-            <path d="M4.3 18.4h3.1c.2 1.1.9 1.7 2.2 1.7 1.2 0 1.9-.5 1.9-1.3s-.6-1.1-2-1.6c-2.1-.7-3.4-1.6-3.4-3.7 0-1.8 1.4-3.2 3.6-3.2 1.8 0 3 .9 3.5 2.5l-2.9.8c-.2-.6-.5-1-1-1-.6 0-1 .3-1 .8s.4.7 1.5 1.1c2.1.7 3.6 1.7 3.6 3.8C20 18.1 18.5 20 16 20c-2.4 0-4-1.3-4.6-3.2l3-1.1c.3.8.7 1.3 1.5 1.3.8 0 1.4-.4 1.4-1.1s-.4-1-1.6-1.5c-1.6-.6-3.1-1.5-3.1-3.5 0-1.7 1.2-3 3.4-3 1.6 0 2.8.7 3.3 2.2l-2.8.8c-.2-.5-.5-.8-.9-.8-.5 0-.9.3-.9.7s.3.7 1.4 1.1c1.8.6 3.2 1.6 3.2 3.6 0 2-1.4 3.4-3.9 3.4s-3.7-1.4-4.2-3.3z"></path>
-          </svg>
-        ),
+        icon: JsIcon,
       },
     ],
   },
@@ -78,55 +29,11 @@ const skillsData = [
     skills: [
       {
         name: 'Bootstrap',
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            className="w-16 h-16"
-          >
-            <path
-              fill="#7952B3"
-              d="M19 2H5C3.34 2 2 3.34 2 5v14c0 1.66 1.34 3 3 3h14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-2-3-2z"
-            ></path>
-            <path
-              fill="#FFF"
-              d="M14.2 14.5c0 .9-.6 1.6-1.7 1.6h-3c-1.1 0-1.7-.7-1.7-1.6v-5c0-.9.6-1.6 1.7-1.6h3c1.1 0 1.7.7 1.7 1.6v5zm-3.8-4.2h2.2c.5 0 .8.3.8.7v3c0 .4-.3.7-.8.7h-2.2c-.5 0-.8-.3-.8-.7v-3c0-.4.3-.7.8-.7z"
-            ></path>
-          </svg>
-        ),
+        icon: BootstrapIcon,
       },
       {
         name: 'React',
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            className="w-16 h-16 text-cyan-400"
-          >
-            <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
-            <g fill="none" stroke="currentColor" strokeWidth="1">
-              <ellipse cx="12" cy="12" rx="11" ry="4.5"></ellipse>
-              <ellipse
-                cx="12"
-                cy="12"
-                rx="11"
-                ry="4.5"
-                transform="rotate(60 12 12)"
-              ></ellipse>
-              <ellipse
-                cx="12"
-                cy="12"
-                rx="11"
-                ry="4.5"
-                transform="rotate(120 12 12)"
-              ></ellipse>
-            </g>
-          </svg>
-        ),
+        icon: ReactIcon,
       },
       {
         name: 'Material UI',
@@ -136,7 +43,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16"
+            style={{ width: '64px', height: '64px' }}
           >
             <path
               fill="#0081CB"
@@ -153,23 +60,12 @@ const skillsData = [
       },
     ],
   },
-   {
+  {
     title: 'Backend',
     skills: [
-       {
+      {
         name: 'Django',
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            className="w-16 h-16"
-          >
-            <path fill="#092E20" d="M20 3H4C3.45 3 3 3.45 3 4v16c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1z"></path>
-            <path fill="#FFF" d="M6.5 13.5h1.9l.6 2.3h2l-2.9-9h-2l-2.9 9h2l.7-2.3zm1.6-1.7l.8-3.1.8 3.1h-1.6zM12.9 8.8h2.6v6.2h-2.1v-1.1h-.1c-.4.8-1.1 1.3-2.1 1.3-.9 0-1.6-.4-2-1.1-.4-.8-.6-1.8-.6-2.9s.2-2.1.6-2.9c.4-.7 1.1-1.1 2-1.1.9 0 1.6.4 2.1 1.1h.1V8.8zm-2.4 4.8c0 .8.2 1.5.5 1.9.3.4.7.6 1.2.6s.9-.2 1.2-.6c.3-.4.5-1.1.5-1.9s-.2-1.5-.5-1.9c-.3-.4-.7-.6-1.2-.6s-.9.2-1.2.6c-.3.4-.5 1.1-.5 1.9z"></path>
-          </svg>
-        )
+        icon: DjangoIcon,
       },
       {
         name: 'Flask API',
@@ -179,7 +75,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16"
+            style={{ width: '64px', height: '64px' }}
           >
             <path fill="#000" d="M12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm3.1 9.9c-.3.3-.7.4-1.1.4s-.8-.1-1.1-.4c-1.1-.9-1.3-2.6-.5-3.4.3-.3.7-.4 1.1-.4s.8.1 1.1.4c1 .9 1.3 2.6.5 3.4zM8.9 9.9c-.3.3-.7.4-1.1.4s-.8-.1-1.1-.4c-1.1-.9-1.3-2.6-.5-3.4.3-.3.7-.4 1.1-.4s.8.1 1.1.4c1 .9 1.3 2.6.5 3.4z"></path>
             <path fill="#FFF" d="M12 16.5c-3 0-5.5-2.5-5.5-5.5 0-.6.1-1.1.3-1.6.9 1.4 2.6 2.4 4.5 2.4s3.6-1 4.5-2.4c.2.5.3 1.1.3 1.6 0 3-2.5 5.5-5.5 5.5z"></path>
@@ -199,7 +95,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16"
+            style={{ width: '64px', height: '64px' }}
           >
             <path fill="#00758F" d="M22.3 12c0 5.7-4.6 10.3-10.3 10.3S1.7 17.7 1.7 12 6.3 1.7 12 1.7s10.3 4.6 10.3 10.3z"></path>
             <path fill="#F29111" d="M12 3.7c-4.6 0-8.3 3.7-8.3 8.3s3.7 8.3 8.3 8.3c1.7 0 3.3-.5 4.6-1.4l-3-3c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l3 3c.9-1.3 1.4-2.9 1.4-4.6 0-4.6-3.8-8.3-8.4-8.3z"></path>
@@ -215,7 +111,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16 text-gray-400"
+            style={{ width: '64px', height: '64px' }}
           >
             <path
               fill="#F29111"
@@ -241,7 +137,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16"
+            style={{ width: '64px', height: '64px' }}
           >
             <path
               fill="#4A90E2"
@@ -258,7 +154,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16"
+            style={{ width: '64px', height: '64px' }}
           >
             <path
               fill="#4285F4"
@@ -288,7 +184,7 @@ const skillsData = [
             width="64"
             height="64"
             viewBox="0 0 24 24"
-            className="w-16 h-16"
+            style={{ width: '64px', height: '64px' }}
           >
             <path
               fill="#7B68EE"
@@ -305,23 +201,73 @@ const skillsData = [
   },
 ];
 
-const SkillCategory = ({ title, skills, direction }) => (
-  <div className="space-y-8">
-    <h3 className="text-2xl font-bold font-headline text-primary text-center">
+const SkillCategory = ({ title, skills }) => (
+  <Box sx={{ mb: 6 }}>
+    <Typography
+      variant="h3"
+      sx={{
+        fontFamily: '"Space Grotesk", sans-serif',
+        fontWeight: 700,
+        color: '#3b82f6',
+        textAlign: 'center',
+        mb: 4,
+        fontSize: { xs: '1.5rem', md: '2rem' },
+      }}
+    >
       {title}
-    </h3>
-    <div className="flex flex-wrap justify-center gap-12 md:gap-16">
+    </Typography>
+    <Grid container spacing={3} justifyContent="center">
       {skills.map((skill, index) => (
-        <SkillCard
-          key={skill.name}
-          icon={skill.icon}
-          name={skill.name}
-          index={index}
-          direction={direction}
-        />
+        <Grid item key={skill.name}>
+          <Card
+            sx={{
+              width: 120,
+              height: 120,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'background.paper',
+              border: '1px solid #334155',
+              borderRadius: 2,
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+              '&:hover': {
+                transform: 'scale(1.05)',
+                boxShadow: '0 8px 25px rgba(59, 130, 246, 0.2)',
+              },
+            }}
+          >
+            <CardContent sx={{ textAlign: 'center', p: 2 }}>
+              <Avatar
+                sx={{
+                  width: 64,
+                  height: 64,
+                  mb: 1,
+                  backgroundColor: 'transparent',
+                }}
+              >
+                {typeof skill.icon === 'string' ? (
+                  <img src={skill.icon} alt={skill.name} style={{ width: '100%', height: '100%' }} />
+                ) : (
+                  skill.icon
+                )}
+              </Avatar>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: 500,
+                  fontSize: '0.875rem',
+                }}
+              >
+                {skill.name}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
       ))}
-    </div>
-  </div>
+    </Grid>
+  </Box>
 );
 
 export default function SkillsSection() {
@@ -330,39 +276,58 @@ export default function SkillsSection() {
   const rightSkills = skillsData.slice(half);
 
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-secondary overflow-x-hidden">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold font-headline">
+    <Box
+      id="skills"
+      sx={{
+        py: { xs: 6, md: 8 },
+        backgroundColor: 'background.paper',
+      }}
+    >
+      <Container>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 700,
+              mb: 2,
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+            }}
+          >
             My Skills
-          </h2>
-          <p className="text-lg text-muted-foreground mt-2">
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'text.secondary',
+              fontSize: '1.1rem',
+            }}
+          >
             The technologies I work with.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-16">
-          <div className="space-y-16">
+          </Typography>
+        </Box>
+        
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
             {leftSkills.map((category) => (
               <SkillCategory
                 key={category.title}
                 title={category.title}
                 skills={category.skills}
-                direction="left"
               />
             ))}
-          </div>
-          <div className="space-y-16">
+          </Grid>
+          <Grid item xs={12} md={6}>
             {rightSkills.map((category) => (
               <SkillCategory
                 key={category.title}
                 title={category.title}
                 skills={category.skills}
-                direction="right"
               />
             ))}
-          </div>
-        </div>
-      </div>
-    </section>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 }

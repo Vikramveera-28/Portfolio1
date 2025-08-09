@@ -1,14 +1,19 @@
-"use client";
 
+
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { 
+  Box, 
+  Card, 
+  CardContent, 
+  CardHeader, 
+  Typography, 
+  TextField, 
+  Button, 
+  Alert,
+  Snackbar
+} from "@mui/material";
 import { Send } from "lucide-react";
 
 const formSchema = z.object({
@@ -18,9 +23,12 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
-  const { toast } = useToast();
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+  const [errors, setErrors] = useState({});
+  
   const form = useForm({
-    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -28,75 +36,205 @@ export default function ContactForm() {
     },
   });
 
+  const validateForm = (data) => {
+    try {
+      formSchema.parse(data);
+      setErrors({});
+      return true;
+    } catch (error) {
+      const newErrors = {};
+      error.errors.forEach((err) => {
+        newErrors[err.path[0]] = err.message;
+      });
+      setErrors(newErrors);
+      return false;
+    }
+  };
+
   async function onSubmit(values) {
+    if (!validateForm(values)) {
+      return;
+    }
+
     // Simulate form submission
     console.log(values);
     
     // Here you would typically send the data to a server
     // e.g. await fetch('/api/contact', { method: 'POST', body: JSON.stringify(values) });
 
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setSnackbarMessage("Thank you for reaching out. I'll get back to you soon.");
+    setSnackbarSeverity("success");
+    setOpenSnackbar(true);
 
     form.reset();
+    setErrors({});
   }
 
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
   return (
-    <Card className="bg-background/50">
-      <CardHeader>
-        <CardTitle className="text-xl font-semibold text-primary">Send me a message</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Your Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="John Doe" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+    <>
+      <Card
+        sx={{
+          backgroundColor: 'background.default',
+          border: '1px solid #334155',
+          borderRadius: 2,
+        }}
+      >
+        <CardHeader>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 600,
+              color: '#3b82f6',
+              fontSize: '1.25rem',
+            }}
+          >
+            Send me a message
+          </Typography>
+        </CardHeader>
+        <CardContent>
+          <Box
+            component="form"
+            onSubmit={form.handleSubmit(onSubmit)}
+            sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}
+          >
+            <TextField
+              label="Your Name"
+              placeholder="John Doe"
+              {...form.register("name")}
+              error={!!errors.name}
+              helperText={errors.name}
+              fullWidth
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: '#334155',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#3b82f6',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#3b82f6',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'text.secondary',
+                  '&.Mui-focused': {
+                    color: '#3b82f6',
+                  },
+                },
+              }}
             />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Your Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="john.doe@example.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+            
+            <TextField
+              label="Your Email"
+              placeholder="john.doe@example.com"
+              type="email"
+              {...form.register("email")}
+              error={!!errors.email}
+              helperText={errors.email}
+              fullWidth
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: '#334155',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#3b82f6',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#3b82f6',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'text.secondary',
+                  '&.Mui-focused': {
+                    color: '#3b82f6',
+                  },
+                },
+              }}
             />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Your Message</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Hi Vikram, I'd like to talk about..." rows={5} {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+            
+            <TextField
+              label="Your Message"
+              placeholder="Hi Vikram, I'd like to talk about..."
+              multiline
+              rows={5}
+              {...form.register("message")}
+              error={!!errors.message}
+              helperText={errors.message}
+              fullWidth
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: '#334155',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#3b82f6',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#3b82f6',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'text.secondary',
+                  '&.Mui-focused': {
+                    color: '#3b82f6',
+                  },
+                },
+              }}
             />
-            <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+            
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              disabled={form.formState.isSubmitting}
+              endIcon={<Send />}
+              sx={{
+                background: 'linear-gradient(135deg, #3b82f6, #f59e0b)',
+                color: 'white',
+                textTransform: 'none',
+                fontWeight: 600,
+                py: 1.5,
+                '&:hover': {
+                  background: 'linear-gradient(135deg, #3b82f6, #f59e0b)',
+                  transform: 'translateY(-1px)',
+                },
+                '&:disabled': {
+                  background: 'rgba(59, 130, 246, 0.5)',
+                },
+              }}
+            >
               {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-              <Send className="ml-2 h-4 w-4" />
             </Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+          </Box>
+        </CardContent>
+      </Card>
+      
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbarSeverity}
+          sx={{
+            backgroundColor: snackbarSeverity === 'success' ? '#10b981' : '#ef4444',
+            color: 'white',
+            '& .MuiAlert-icon': {
+              color: 'white',
+            },
+          }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
+    </>
   );
 }

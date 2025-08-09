@@ -1,5 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Box, Container, Typography, Card, CardContent, Chip, Grid } from '@mui/material';
 
 const experiences = [
   { role: 'AI Engineer', company: 'Bizzzup Upscalling', duration: '07/04/2025 - Present', description: 'Developing and deploying artificial intelligence models to enhance business processes and create innovative solutions.'},
@@ -9,29 +8,124 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 sm:py-32">
-       <div className="container">
-        <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-headline">Work Experience</h2>
-            <p className="text-lg text-muted-foreground mt-2">My professional journey so far.</p>
-        </div>
-        <Card>
-          <CardContent className="pt-6 space-y-8">
-              {experiences.map(exp => (
-                <div key={exp.company} className="relative pl-8">
-                  <div className="absolute left-0 top-1 h-full border-l-2 border-border"></div>
-                   <div className="absolute left-[-9px] top-1 h-4 w-4 rounded-full bg-primary"></div>
-                  <div className="flex justify-between items-start mb-1">
-                     <h4 className="font-semibold text-xl text-primary">{exp.role}</h4>
-                     <Badge variant="secondary">{exp.duration}</Badge>
-                  </div>
-                  <p className="text-sm font-medium mb-1">{exp.company}</p>
-                  <p className="text-muted-foreground">{exp.description}</p>
-                </div>
+    <Box
+      id="experience"
+      sx={{
+        py: { xs: 6, md: 8 },
+        backgroundColor: 'background.default',
+      }}
+    >
+      <Container>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: '"Space Grotesk", sans-serif',
+              fontWeight: 700,
+              mb: 2,
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+            }}
+          >
+            Work Experience
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'text.secondary',
+              fontSize: '1.1rem',
+            }}
+          >
+            My professional journey so far.
+          </Typography>
+        </Box>
+        
+        <Card
+          sx={{
+            backgroundColor: 'background.paper',
+            border: '1px solid #334155',
+            borderRadius: 2,
+          }}
+        >
+          <CardContent sx={{ p: 4 }}>
+            <Box sx={{ position: 'relative' }}>
+              {experiences.map((exp, index) => (
+                <Box key={exp.company} sx={{ position: 'relative', pl: 4, mb: 4 }}>
+                  {/* Timeline line */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      left: 0,
+                      top: 0,
+                      bottom: index === experiences.length - 1 ? 0 : -16,
+                      width: '2px',
+                      backgroundColor: '#3b82f6',
+                    }}
+                  />
+                  
+                  {/* Timeline dot */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      left: -5,
+                      top: 8,
+                      width: 12,
+                      height: 12,
+                      borderRadius: '50%',
+                      backgroundColor: '#3b82f6',
+                      border: '2px solid #1e293b',
+                    }}
+                  />
+                  
+                  <Box sx={{ mb: 2 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          fontWeight: 600,
+                          color: '#3b82f6',
+                          fontSize: { xs: '1.1rem', md: '1.25rem' },
+                        }}
+                      >
+                        {exp.role}
+                      </Typography>
+                      <Chip
+                        label={exp.duration}
+                        size="small"
+                        sx={{
+                          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                          color: '#3b82f6',
+                          border: '1px solid rgba(59, 130, 246, 0.2)',
+                        }}
+                      />
+                    </Box>
+                    
+                    <Typography
+                      variant="subtitle1"
+                      sx={{
+                        fontWeight: 500,
+                        mb: 1,
+                        fontSize: '1rem',
+                      }}
+                    >
+                      {exp.company}
+                    </Typography>
+                    
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: 'text.secondary',
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {exp.description}
+                    </Typography>
+                  </Box>
+                </Box>
               ))}
+            </Box>
           </CardContent>
         </Card>
-       </div>
-    </section>
-  )
+      </Container>
+    </Box>
+  );
 }
