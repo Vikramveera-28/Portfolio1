@@ -135,7 +135,7 @@ export default function ContactSection() {
                 >
                   <Linkedin style={{ width: '20px', height: '20px' }} />
                 </IconButton>
-                <IconButton
+                {/* <IconButton
                   component="a"
                   href="#"
                   target="_blank"
@@ -151,10 +151,10 @@ export default function ContactSection() {
                   }}
                 >
                   <Facebook style={{ width: '20px', height: '20px' }} />
-                </IconButton>
+                </IconButton> */}
                 <IconButton
                   component="a"
-                  href="#"
+                  href="https://github.com/Vikramveera-28"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"

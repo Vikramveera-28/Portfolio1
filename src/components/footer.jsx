@@ -17,22 +17,9 @@ export default function Footer() {
             variant="body2"
             sx={{
               color: 'text.secondary',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 0.5,
-              mb: 1,
             }}
           >
-            Made with <Heart style={{ width: '16px', height: '16px', color: '#f59e0b' }} /> by Vikram Kumar from Ranchi, Jharkhand.
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              color: 'text.secondary',
-            }}
-          >
-            © {new Date().getFullYear()} Persona Portfolio. All Rights Reserved.
+            © {new Date().getFullYear()} Personal Portfolio. All Rights Reserved.
           </Typography>
         </Box>
       </Container>

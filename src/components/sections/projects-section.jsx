@@ -14,7 +14,7 @@ const projects = [
       'Backend': ['Django', 'json-server'],
       'Database': ['MySQL']
     },
-    link: '#',
+    link: 'https://github.com/Vikramveera-28/Ecommerce_django.git',
   },
   {
     title: 'AI Chat Bot',
@@ -185,7 +185,7 @@ export default function ProjectsSection() {
                       },
                     }}
                   >
-                    View Project
+                    View Git
                   </Button>
                 </CardActions>
               </Card>
